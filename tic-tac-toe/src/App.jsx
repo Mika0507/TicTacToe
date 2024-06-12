@@ -26,7 +26,7 @@ function App() {
     // actualizar el tablero
     const newBoard = [...board];
     newBoard[index] = turn;
-    setBoard = newBoard;
+    setBoard(newBoard)
 
     const newTurn = turn === Turns.X ? Turns.O : Turns.X;
     setTurn(newTurn);
