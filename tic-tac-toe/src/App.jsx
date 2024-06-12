@@ -33,7 +33,7 @@ function App() {
 
     // Guardar partida
     window.localStorage.setItem("board", JSON.stringify(newBoard));
-    window.localStorage.setItem("turn", turn);
+    window.localStorage.setItem("turn", newTurn);
     // revisamos si tenemos un ganador
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
