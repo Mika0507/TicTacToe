@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import confetti from "canvas-confetti";
-import { Square } from "./components/square";
+import { Square } from "./components/Square";
 import { Turns } from "./constants";
 import { checkWinner, checkEndGame } from "./logic/board";
 import { WinnerModal } from "./components/WinnerModal";
@@ -26,7 +26,7 @@ function App() {
     // actualizar el tablero
     const newBoard = [...board];
     newBoard[index] = turn;
-    setBoard(newBoard)
+    setBoard(newBoard);
 
     const newTurn = turn === Turns.X ? Turns.O : Turns.X;
     setTurn(newTurn);
@@ -50,22 +50,20 @@ function App() {
     setTurn(Turns.X);
     setWinner(null);
 
-    window.localStorage.removeItem('board')
-    window.localStorage.removeItem('turn')
+    window.localStorage.removeItem("board");
+    window.localStorage.removeItem("turn");
   };
 
   return (
-    <main>
+    <main className="board">
       <h1>Tic Tac Toe</h1>
       <button onClick={resetGame}>Reset del juego</button>
       <section className="game">
         {board.map((square, index) => {
           return (
-            <square
-              key={index}
-              index={index}
-              updateBoard={{ updateBoard }}
-            ></square>
+            <Square key={index} index={index} updateBoard={ updateBoard }>
+              {square}
+            </Square>
           );
         })}
       </section>
