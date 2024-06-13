@@ -7,6 +7,7 @@ import { checkWinner, checkEndGame } from "./logic/board";
 import { WinnerModal } from "./components/WinnerModal";
 
 function App() {
+  // Es recomendable que inicialices el estado con el tipo de dato que quieres utilizar, si es algo que tienes muy claro lo puedes inicializar con un null
   // Creamos el tablero con un array de nueve posiciones que de momento la rellenaremos con null.
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem("board");
